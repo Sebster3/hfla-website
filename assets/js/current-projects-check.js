@@ -164,6 +164,7 @@ function createFilter(sortedProjectData){
             
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
 
         }
 }
@@ -431,6 +432,7 @@ return `
             data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
+            data-tools=""
         >
         <div class="project-card-inner">
 
