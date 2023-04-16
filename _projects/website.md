@@ -100,7 +100,12 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
+tools:
+  - Figma
+  - Google Drive
+  - Zoom
+  - Google Analytics
+  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA
