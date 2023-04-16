@@ -98,7 +98,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
+                            "tools": {{ project.tools | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
@@ -432,7 +432,7 @@ return `
             data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
-            data-tools=""
+            data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"
         >
         <div class="project-card-inner">
 
@@ -469,7 +469,7 @@ return `
             `
             <div class="project-tools">
             <strong>Tools: </strong>
-            ${ project.tools }
+            ${ project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ") }
             </div>
             `:""
             }
